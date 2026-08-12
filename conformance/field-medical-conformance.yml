@@ -1,0 +1,38 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.fieldmedicalinc.com/_api/mcp
+note: Assertions are limited to what was observed on the one machine-readable surface
+  Field Medical serves. No OpenAPI, AsyncAPI, GraphQL or OAuth surface exists to assert
+  against, and Field Medical publishes no compliance program page, so no Compliance
+  pointer is emitted.
+standards:
+- id: mcp-2025-06-18
+  conforms: true
+  evidence: initialize returned protocolVersion "2025-06-18" with capabilities.tools.listChanged
+    true; tools/list returned 9 tools each carrying a JSON Schema inputSchema.
+- id: jsonrpc-2.0
+  conforms: true
+  evidence: All responses carry "jsonrpc":"2.0" with matching id; unsupported methods
+    return error code -32601 (resources/list, prompts/list).
+- id: llmstxt
+  conforms: true
+  evidence: https://www.fieldmedicalinc.com/llms.txt returns HTTP 200 text/plain with
+    H1 title, blockquote summary and link sections.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned HTTP 400 (HTML error page).
+- id: rfc8615-well-known
+  conforms: false
+  evidence: Every /.well-known/* path probed returned HTTP 400 HTML.
+- id: a2a-agent-card
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json both returned
+    HTTP 400 HTML.
+- id: openapi
+  conforms: false
+  evidence: /openapi.json, /swagger.json, /api-docs, /docs, /graphql, /wp-json all
+    returned 400/404 HTML on the only public host.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth authorization server metadata served; the MCP surface uses an
+    anonymous visitor token minted by a tool call.

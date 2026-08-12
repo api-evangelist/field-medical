@@ -1,0 +1,13 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.fieldmedicalinc.com/_api/mcp
+limit_count: 0
+rate_limits: []
+headers_observed: []
+note: No rate limits are published anywhere on Field Medical's site, and the live
+  JSON-RPC responses from the Wix-provided site MCP endpoint carried no X-RateLimit-*,
+  RateLimit-* or Retry-After headers on the requests observed 2026-08-12 (initialize,
+  tools/list, resources/list, prompts/list). Response headers were content-type, mcp-session-id,
+  etag, cache-control, x-wix-request-id, strict-transport-security and Wix routing
+  headers only. Any throttling on this surface is undocumented and platform-imposed
+  by Wix rather than declared by Field Medical. An honest zero.

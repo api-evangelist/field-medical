@@ -1,0 +1,52 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.fieldmedicalinc.com/
+host: https://www.fieldmedicalinc.com
+note: 'Every /.well-known/ path probed on Field Medical''s only public host returned
+  HTTP 400 with a Wix HTML error page — not a document. No WellKnown or SecurityTxt
+  pointer is emitted in apis.yml: this file records a verified ABSENCE. The site does
+  serve a real /llms.txt (200, text/plain), captured separately at llms/field-medical-llms.txt.'
+documents:
+- path: /.well-known/security.txt
+  status: 400
+  content_type: text/html
+  file: null
+- path: /.well-known/openid-configuration
+  status: 400
+  content_type: text/html
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 400
+  content_type: text/html
+  file: null
+- path: /.well-known/oauth-protected-resource
+  status: 400
+  content_type: text/html
+  file: null
+- path: /.well-known/api-catalog
+  status: 400
+  content_type: text/html
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 400
+  content_type: text/html
+  file: null
+- path: /.well-known/agent-card.json
+  status: 400
+  content_type: text/html
+  file: null
+- path: /.well-known/agent.json
+  status: 400
+  content_type: text/html
+  file: null
+other_paths:
+- path: /llms.txt
+  status: 200
+  content_type: text/plain
+  file: llms/field-medical-llms.txt
+- path: /robots.txt
+  status: 200
+  content_type: text/plain
+- path: /sitemap.xml
+  status: 200
+  content_type: text/xml

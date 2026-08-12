@@ -1,23 +1,87 @@
 aid: field-medical
 name: Field Medical
-description: 'Field Medical is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Field Medical, Inc. is a Carlsbad, California clinical-stage cardiac
+  electrophysiology company founded in 2022 by Dr. Steven Mickelsen to build a second-generation
+  pulsed field ablation (PFA) platform. Its FieldForce Ablation System pairs a focal
+  catheter design with proprietary FieldBending energy and is positioned as the first
+  PFA system purpose-built for ventricular arrhythmia ablation, with atrial fibrillation
+  applications in development. The company holds FDA Breakthrough Device Designation
+  and a place in the FDA TAP Pilot Program for its VT indication, has published first-in-human
+  VCAS data in Circulation, and has raised roughly $75M across Series A and Series
+  B. Field Medical is a medical device manufacturer, not a software vendor: it publishes
+  no developer portal, no public REST/GraphQL API and no SDKs. Its only machine-readable
+  public surface is the llms.txt and anonymous site MCP endpoint that its Wix-hosted
+  corporate website serves.'
+image: https://static.wixstatic.com/media/8a66b7_1cc006a6bfe247ada2ee91171488f369%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/8a66b7_1cc006a6bfe247ada2ee91171488f369%7Emv2.png
 url: https://raw.githubusercontent.com/api-evangelist/field-medical/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
-apis: []
+- Medical Devices
+- Healthcare
+- Cardiology
+- Medical Technology
+- Clinical Research
+- Model Context Protocol
+apis:
+- name: Field Medical Site MCP
+  description: An anonymous, read-oriented Model Context Protocol endpoint served from
+    Field Medical's own corporate domain. It is provided by the Wix website platform
+    (Wix Site MCP), not authored by Field Medical, and exposes site content and business
+    details rather than any FieldForce device or clinical data. tools/list answers
+    unauthenticated with nine tools carrying real inputSchemas; write-path tools require
+    a visitor token minted by GenerateVisitorToken.
+  humanURL: https://www.fieldmedicalinc.com/llms.txt
+  baseURL: https://www.fieldmedicalinc.com/_api/mcp
+  tags:
+  - Model Context Protocol
+  - Agents
+  properties:
+  - type: MCPServer
+    url: mcp/field-medical-mcp.yml
+  - type: LLMsTxt
+    url: llms/field-medical-llms.txt
+  - type: Documentation
+    name: Wix Site MCP documentation (platform-provided, not first-party)
+    url: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/field-medical-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.fieldmedicalinc.com/
+- type: Blog
+  url: https://www.fieldmedicalinc.com/news
+- type: BlogRSS
+  url: https://www.fieldmedicalinc.com/blog-feed.xml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/field-medical/
+- type: Careers
+  url: https://www.fieldmedicalinc.com/careers
+- type: Investors
+  url: https://www.fieldmedicalinc.com/investors
+- type: MCPServer
+  url: mcp/field-medical-mcp.yml
+- type: LLMsTxt
+  url: llms/field-medical-llms.txt
+- type: Authentication
+  url: authentication/field-medical-authentication.yml
+- type: Conformance
+  url: conformance/field-medical-conformance.yml
+- type: RateLimits
+  url: rate-limits/field-medical-rate-limits.yml
+- type: Plans
+  url: plans/field-medical-plans-pricing.yml
+x-enrichment:
+  date: '2026-08-12'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1

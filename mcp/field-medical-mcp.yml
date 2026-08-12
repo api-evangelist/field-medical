@@ -1,0 +1,76 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.fieldmedicalinc.com/_api/mcp
+status: published
+server:
+  name: field-medical-site-mcp
+  transport: http
+  url: https://www.fieldmedicalinc.com/_api/mcp
+  server_info_name: 'Site Visitor Assistant for site "Field Medical, Inc." (https://www.fieldmedicalinc.com/_api/mcp)'
+  server_info_version: 1.0.0
+  protocol_version: '2025-06-18'
+  capabilities:
+    tools:
+      listChanged: true
+    logging: {}
+  resources: not-implemented   # resources/list -> JSON-RPC -32601 Method not found
+  prompts: not-implemented     # prompts/list   -> JSON-RPC -32601 Method not found
+platform:
+  provider: Wix
+  kind: site-mcp
+  note: This endpoint is generated and operated by the Wix website platform for any
+    Wix-hosted site, and is advertised by the Wix-generated /llms.txt on Field Medical's
+    domain. Field Medical serves it from its own host, but did not author the tool
+    surface. It exposes public marketing-site content and business details only —
+    there is no FieldForce device, clinical-trial or patient data behind it. Do not
+    read this as a first-party Field Medical developer API.
+  documentation: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+authentication:
+  tools_list: anonymous          # observed HTTP 200 with no credentials
+  site_api_calls: visitor-token  # CallWixSiteAPI / ExecuteWixAPI require a token from GenerateVisitorToken
+  note: GET https://www.fieldmedicalinc.com/_api/mcp returns 401; the surface answers
+    to JSON-RPC POST only.
+tools:
+- name: GetBusinessDetails
+  description: Get business and site details (timezone, email, phone, fax, address,
+    site name, business name) for the Field Medical site.
+  inputs: []
+- name: SearchInSite
+  description: Search the Field Medical site for information.
+  inputs: [searchTerm]
+- name: SearchSiteApiDocs
+  description: Search the API documentation for the Wix business solutions installed
+    on this site and explain how to use them.
+  inputs: [searchTerm]
+- name: GenerateVisitorToken
+  description: Create a new visitor session and obtain a visitor access token for
+    the site. Required before CallWixSiteAPI.
+  inputs: []
+- name: CallWixSiteAPI
+  description: Call API methods on the site on a visitor's behalf (query site data,
+    book an appointment, start a purchase).
+  inputs: [visitorToken, url, method, body]
+- name: ExecuteWixAPI
+  description: Run JavaScript against the Wix REST API on the site, on the visitor's
+    behalf, in a sandbox.
+  inputs: [code, reason, hasMutations, sourceDocUrls, visitorToken]
+- name: BrowseWixRESTDocsMenu
+  description: Browse the Wix REST API documentation menu hierarchy.
+  inputs: [menuUrl, reason]
+- name: ReadFullDocsArticle
+  description: Fetch a complete article from the Wix developer documentation portal.
+  inputs: [articleUrl]
+- name: ReadFullDocsMethodSchema
+  description: Fetch the full request/response schema for a Wix API method.
+  inputs: [articleUrl, reason]
+tool_count: 9
+verbatim: mcp/field-medical-mcp-tools.json
+x-evidence:
+  fetched: '2026-08-12'
+  method: POST
+  url: https://www.fieldmedicalinc.com/_api/mcp
+  body: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+  http_status: 200
+  content_type: application/json; charset=utf-8
+  bytes: 28854
+  initialize_status: 200

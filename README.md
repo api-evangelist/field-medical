@@ -42,5 +42,8 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Field Medical is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Field Medical, Inc. is a Carlsbad, California clinical-stage cardiac electrophysiology company founded in 2022 by Dr. Steven Mickelsen, developing the FieldForce Ablation System — a second-generation pulsed field ablation (PFA) platform purpose-built for ventricular arrhythmia ablation, holding FDA Breakthrough Device Designation and a place in the FDA TAP Pilot Program.
+
+It is a medical device manufacturer, not a software vendor. There is no developer portal, no public REST/GraphQL API, and no SDKs. The only machine-readable public surface is the `llms.txt` and the anonymous Model Context Protocol endpoint that its Wix-hosted corporate website serves at `/_api/mcp` — a platform-provided site MCP, captured here with that provenance recorded.
+
+- https://www.fieldmedicalinc.com/

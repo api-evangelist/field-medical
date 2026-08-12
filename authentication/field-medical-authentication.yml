@@ -1,0 +1,46 @@
+generated: '2026-08-12'
+method: probed
+source: https://www.fieldmedicalinc.com/_api/mcp
+scope: Applies ONLY to the Wix-provided site MCP endpoint served at Field Medical's
+  domain. Field Medical publishes no developer portal, no REST/GraphQL API and no
+  authentication documentation of its own; there is no OpenAPI in this repo to derive
+  securitySchemes from. Everything below was observed live, not read from a provider
+  auth page.
+summary:
+  types:
+  - none
+  - bearer-visitor-token
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+- name: anonymous-jsonrpc
+  type: none
+  applies_to:
+  - tools/list
+  - initialize
+  - GetBusinessDetails
+  - SearchInSite
+  - SearchSiteApiDocs
+  evidence: POST https://www.fieldmedicalinc.com/_api/mcp with no credentials returned
+    HTTP 200 and the full nine-tool manifest on 2026-08-12.
+  sources:
+  - mcp/field-medical-mcp-tools.json
+- name: wix-visitor-token
+  type: http
+  scheme: bearer
+  applies_to:
+  - CallWixSiteAPI
+  - ExecuteWixAPI
+  obtained_via: GenerateVisitorToken (MCP tool, no credentials required)
+  evidence: 'visitorToken is a required inputSchema property on CallWixSiteAPI and
+    ExecuteWixAPI in the live tools/list response; the published tool description states:
+    "You must use this tool before calling CallWixSiteAPI".'
+  sources:
+  - mcp/field-medical-mcp-tools.json
+  - llms/field-medical-llms.txt
+notes:
+- A plain GET on https://www.fieldmedicalinc.com/_api/mcp returns HTTP 401; the endpoint
+  answers JSON-RPC POST only.
+- No OAuth 2.0 / OIDC discovery is served — /.well-known/oauth-authorization-server,
+  /.well-known/oauth-protected-resource and /.well-known/openid-configuration all
+  returned HTTP 400 HTML (see well-known/field-medical-well-known.yml).
