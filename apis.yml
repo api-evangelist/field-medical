@@ -26,6 +26,14 @@ tags:
 - Cardiology
 - Medical Technology
 - Clinical Research
+- MCP
+tags_raw:
+- Company
+- Medical Devices
+- Healthcare
+- Cardiology
+- Medical Technology
+- Clinical Research
 - Model Context Protocol
 apis:
 - name: Field Medical Site MCP
@@ -38,6 +46,9 @@ apis:
   humanURL: https://www.fieldmedicalinc.com/llms.txt
   baseURL: https://www.fieldmedicalinc.com/_api/mcp
   tags:
+  - MCP
+  - Agents
+  tags_raw:
   - Model Context Protocol
   - Agents
   properties:
