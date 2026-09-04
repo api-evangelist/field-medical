@@ -23,6 +23,20 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  - rate-limits
+  - security
+  generated: '2026-09-03'
+  method: derived
 image: https://static.wixstatic.com/media/8a66b7_1cc006a6bfe247ada2ee91171488f369%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/8a66b7_1cc006a6bfe247ada2ee91171488f369%7Emv2.png
 url: https://raw.githubusercontent.com/api-evangelist/field-medical/refs/heads/main/apis.yml
 x-type: company
