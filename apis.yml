@@ -84,6 +84,9 @@ apis:
   - type: Documentation
     name: Wix Site MCP documentation (platform-provided, not first-party)
     url: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+  x-surface: platform-generated
+  x-platform: wix
+  x-platform-surface: site-mcp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
