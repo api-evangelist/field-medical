@@ -64,8 +64,103 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Field Medical, Inc. is a Carlsbad, California clinical-stage cardiac electrophysiology company founded in 2022 by Dr. Steven Mickelsen, developing the FieldForce Ablation System — a second-generation pulsed field ablation (PFA) platform purpose-built for ventricular arrhythmia ablation, holding FDA Breakthrough Device Designation and a place in the FDA TAP Pilot Program.
+Field Medical, Inc. is a Carlsbad, California clinical-stage cardiac electrophysiology company founded in 2022 by Dr. Steven Mickelsen to build a second-generation pulsed field ablation (PFA) platform. Its FieldForce Ablation System pairs a focal catheter design with proprietary FieldBending energy and is positioned as the first PFA system purpose-built for ventricular arrhythmia ablation, with atrial fibrillation applications in development. The company holds FDA Breakthrough Device Designation and a place in the FDA TAP Pilot Program for its VT indication, has published first-in-human VCAS data in Circulation, and has raised roughly $75M across Series A and Series B. Field Medical is a medical device manufacturer, not a software vendor: it publishes no developer portal, no public REST/GraphQL API and no SDKs. Its only machine-readable public surface is the llms.txt and anonymous site MCP endpoint that its Wix-hosted corporate website serves.
 
-It is a medical device manufacturer, not a software vendor. There is no developer portal, no public REST/GraphQL API, and no SDKs. The only machine-readable public surface is the `llms.txt` and the anonymous Model Context Protocol endpoint that its Wix-hosted corporate website serves at `/_api/mcp` — a platform-provided site MCP, captured here with that provenance recorded.
+**Areas:** Company · Medical Devices · Healthcare · Cardiology · Medical Technology · Clinical Research · MCP
 
-- https://www.fieldmedicalinc.com/
+## Field Medical on APIs.io
+
+Everything profiled for Field Medical is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/field-medical/](https://apis.io/providers/field-medical/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Field Medical Site MCP](https://apis.io/apis/field-medical/field-medical-site-mcp/) — An anonymous, read-oriented Model Context Protocol endpoint served from Field Medical's own corporate domain. It is provided by the Wix website platform…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [field-medical-site-mcp](https://apis.io/servers/field-medical/field-medical-site-mcp/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Field Medical Authentication](https://apis.io/security/field-medical/field-medical-authentication/)
+- [Field Medical Domain Security](https://apis.io/security/field-medical/field-medical-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Field Medical Plans Pricing](https://apis.io/plans/field-medical/field-medical-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Field Medical Rate Limits](https://apis.io/rate-limits/field-medical/field-medical-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.fieldmedicalinc.com/)
+- [Blog](https://www.fieldmedicalinc.com/news)
+
+## API Evangelist rating
+
+**Kin Score 14.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 0.0 |
+
+**Agent readiness 7.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.3** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/field-medical/](https://apis.io/providers/field-medical/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Field Medical: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/field-medical/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
